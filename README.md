@@ -17,7 +17,7 @@ $ docker exec ttrss-docker_app_1 /bin/chmod -R og+rX /var/www/html/tt-rss/plugin
 ```
 
 If you're not using the Docker Compose setup then you'll have to execute
-the non-Docker equivalent.  The key thing is to:
+the non-Docker equivalent commands.  The key thing is to:
 
 1. Make a directory for this plugin, called `googlereaderkeys` (not
    anything else, it has to match up with the class name in
