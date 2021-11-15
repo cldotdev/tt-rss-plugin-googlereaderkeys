@@ -1,6 +1,5 @@
 <?php
 class GoogleReaderKeys extends Plugin {
-	private $host;
 
 	function about() {
 		return array(1.0,
@@ -9,8 +8,6 @@ class GoogleReaderKeys extends Plugin {
 	}
 
 	function init($host) {
-		$this->host = $host;
-
 		$host->add_hook($host::HOOK_HOTKEY_MAP, $this);
 	}
 
