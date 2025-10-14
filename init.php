@@ -25,7 +25,7 @@ class GoogleReaderKeys extends Plugin {
 		$hotkeys["o"]		= "toggle_expand";
 		$hotkeys["\r|Enter"]	= "toggle_expand";
 		$hotkeys["?"]		= "help_dialog";
-		$hotkeys[" |Space"]	= "next_article";
+		$hotkeys[" |Space"]	= "next_article_noscroll";
 		$hotkeys["(38)|Up"]	= "article_scroll_up";
 		$hotkeys["(40)|Down"]	= "article_scroll_down";
 
