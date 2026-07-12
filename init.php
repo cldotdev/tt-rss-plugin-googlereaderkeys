@@ -9,6 +9,11 @@ class GoogleReaderKeys extends Plugin {
 
 	function init($host) {
 		$host->add_hook($host::HOOK_HOTKEY_MAP, $this);
+		$host->add_hook($host::HOOK_HOTKEY_INFO, $this);
+	}
+
+	function get_js() {
+		return file_get_contents(__DIR__ . "/init.js");
 	}
 
 	function hook_hotkey_map($hotkeys) {
@@ -28,6 +33,14 @@ class GoogleReaderKeys extends Plugin {
 		$hotkeys[" |Space"]	= "next_article_noscroll";
 		$hotkeys["(38)|Up"]	= "article_scroll_up";
 		$hotkeys["(40)|Down"]	= "article_scroll_down";
+		$hotkeys["y"]		= "open_in_background_tab";
+		$hotkeys["b"]		= "open_in_background_tab";
+
+		return $hotkeys;
+	}
+
+	function hook_hotkey_info($hotkeys) {
+		$hotkeys[__("Article")]["open_in_background_tab"] = __("Open in background tab");
 
 		return $hotkeys;
 	}

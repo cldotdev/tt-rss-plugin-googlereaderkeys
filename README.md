@@ -12,6 +12,7 @@ the easiest way to install the plugin is the following docker commands.
 ```sh
 $ docker exec ttrss-docker_app_1 /bin/mkdir /var/www/html/tt-rss/plugins.local/googlereaderkeys
 $ docker cp init.php ttrss-docker_app_1:/var/www/html/tt-rss/plugins.local/googlereaderkeys
+$ docker cp init.js ttrss-docker_app_1:/var/www/html/tt-rss/plugins.local/googlereaderkeys
 $ docker exec ttrss-docker_app_1 /bin/chown -R app:app /var/www/html/tt-rss/plugins.local/googlereaderkeys
 $ docker exec ttrss-docker_app_1 /bin/chmod -R og+rX /var/www/html/tt-rss/plugins.local/googlereaderkeys
 ```
@@ -22,7 +23,8 @@ the non-Docker equivalent commands.  The key thing is to:
 1. Make a directory for this plugin, called `googlereaderkeys` (not
    anything else, it has to match up with the class name in
    init.php) inside your `plugins.local` directory.
-1. Copy the `init.php` file from here into that new directory.
+1. Copy the `init.php` and `init.js` files from here into that new
+   directory.
 1. Ensure the owner and permissions are such that your web server
    can access the directory and file.
 
@@ -51,6 +53,13 @@ are:
 | Space     | next_article                     |
 | Up        | article_scroll_up                |
 | Down      | article_scroll_down              |
+| y         | open_in_background_tab           |
+| b         | open_in_background_tab           |
 
 If in doubt check the `init.php` file, it should be as obvious as this
 table.
+
+The `open_in_background_tab` action is provided by this plugin (in
+`init.js`): it opens the active article's link in a background tab by
+synthesizing a Ctrl-click (Cmd-click on macOS) and marks the article as
+read.
