@@ -1,24 +1,25 @@
 # Google Reader Keys
+
 This is a Tiny Tiny RSS plugin to have keyboard shortcuts in the style
 of the long-since defunct Google Reader, but with extra tweaks for later
 Tiny Tiny RSS functionality.
 
 ## Installation
+
 Assuming that you're using the recommended Docker Compose setup and that
 the current directory is where this `README.md` and the `init.php` are, then
 the easiest way to install the plugin is the following docker commands.
 
-
 ```sh
-$ docker exec ttrss-docker_app_1 /bin/mkdir /var/www/html/tt-rss/plugins.local/googlereaderkeys
-$ docker cp init.php ttrss-docker_app_1:/var/www/html/tt-rss/plugins.local/googlereaderkeys
-$ docker cp init.js ttrss-docker_app_1:/var/www/html/tt-rss/plugins.local/googlereaderkeys
-$ docker exec ttrss-docker_app_1 /bin/chown -R app:app /var/www/html/tt-rss/plugins.local/googlereaderkeys
-$ docker exec ttrss-docker_app_1 /bin/chmod -R og+rX /var/www/html/tt-rss/plugins.local/googlereaderkeys
+docker exec ttrss-docker_app_1 /bin/mkdir /var/www/html/tt-rss/plugins.local/googlereaderkeys
+docker cp init.php ttrss-docker_app_1:/var/www/html/tt-rss/plugins.local/googlereaderkeys
+docker cp init.js ttrss-docker_app_1:/var/www/html/tt-rss/plugins.local/googlereaderkeys
+docker exec ttrss-docker_app_1 /bin/chown -R app:app /var/www/html/tt-rss/plugins.local/googlereaderkeys
+docker exec ttrss-docker_app_1 /bin/chmod -R og+rX /var/www/html/tt-rss/plugins.local/googlereaderkeys
 ```
 
 If you're not using the Docker Compose setup then you'll have to execute
-the non-Docker equivalent commands.  The key thing is to:
+the non-Docker equivalent commands. The key thing is to:
 
 1. Make a directory for this plugin, called `googlereaderkeys` (not
    anything else, it has to match up with the class name in
@@ -33,6 +34,7 @@ Preferences you should have a "googlereaderkeys" entry that you can
 activate.
 
 ## Shortcuts
+
 Assuming this document is up to date, then the changed/added shortcuts
 are:
 
