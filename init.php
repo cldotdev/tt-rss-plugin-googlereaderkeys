@@ -24,6 +24,8 @@ class GoogleReaderKeys extends Plugin {
 		$hotkeys["K"]		= "prev_unread_feed";
 		$hotkeys["N"]		= "next_feed";
 		$hotkeys["P"]		= "prev_feed";
+		$hotkeys["n"]		= "article_page_down";
+		$hotkeys["p"]		= "article_page_up";
 		$hotkeys["v"]		= "open_in_new_window";
 		$hotkeys["r"]		= "feed_refresh";
 		$hotkeys["m"]		= "toggle_unread";
