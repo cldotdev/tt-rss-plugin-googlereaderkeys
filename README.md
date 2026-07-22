@@ -65,3 +65,9 @@ The `open_in_background_tab` action is provided by this plugin (in
 `init.js`): it opens the active article's link in a background tab by
 synthesizing a Ctrl-click (Cmd-click on macOS) and marks the article as
 read.
+
+The `toggle_expand` action is also provided by this plugin (in
+`init.js`), because current tt-rss no longer implements it (see
+`docs/tt-rss-hotkey-actions.md`). In combined mode it collapses the
+active article, or re-expands the last collapsed (or the first visible)
+one.

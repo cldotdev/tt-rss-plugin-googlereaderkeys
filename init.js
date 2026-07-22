@@ -30,5 +30,30 @@ require(['dojo/ready'], function (ready) {
 
 			Headlines.toggleUnread(id, 0);
 		};
+
+		/* tt-rss no longer implements the built-in toggle_expand action
+		   (its hotkey help still lists it), so provide one for combined
+		   mode: collapse the active article, or re-expand the last
+		   collapsed (or the first visible) one. */
+		let lastCollapsedId = 0;
+
+		App.hotkey_actions["toggle_expand"] = function () {
+			if (!App.isCombinedMode()) return;
+
+			const active = Article.getActive();
+
+			if (active) {
+				lastCollapsedId = active;
+				Article.cdmUnsetActive();
+			} else {
+				const target = (lastCollapsedId && document.getElementById("RROW-" + lastCollapsedId))
+					? lastCollapsedId : Headlines.firstVisible();
+
+				if (target) {
+					Article.setActive(target);
+					Article.cdmMoveToId(target);
+				}
+			}
+		};
 	});
 });
